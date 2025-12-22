@@ -1,0 +1,12 @@
+C:\DESARROLLO\3.DI\Learning\ProyectoFigma\ProyectoFigma\obj\Debug\ProyectoFigma.csproj.AssemblyReference.cache
+C:\DESARROLLO\3.DI\Learning\ProyectoFigma\ProyectoFigma\obj\Debug\ProyectoFigma.Properties.Resources.resources
+C:\DESARROLLO\3.DI\Learning\ProyectoFigma\ProyectoFigma\obj\Debug\ProyectoFigma.csproj.GenerateResource.cache
+C:\DESARROLLO\3.DI\Learning\ProyectoFigma\ProyectoFigma\obj\Debug\ProyectoFigma.csproj.CoreCompileInputs.cache
+C:\DESARROLLO\3.DI\Learning\ProyectoFigma\ProyectoFigma\obj\Debug\ProyectoFigma.Vista.GestorBiblioteca.resources
+C:\DESARROLLO\3.DI\Learning\ProyectoFigma\ProyectoFigma\bin\Debug\ProyectoFigma.exe.config
+C:\DESARROLLO\3.DI\Learning\ProyectoFigma\ProyectoFigma\bin\Debug\ProyectoFigma.exe
+C:\DESARROLLO\3.DI\Learning\ProyectoFigma\ProyectoFigma\bin\Debug\ProyectoFigma.pdb
+C:\DESARROLLO\3.DI\Learning\ProyectoFigma\ProyectoFigma\obj\Debug\ProyectoFigma.exe
+C:\DESARROLLO\3.DI\Learning\ProyectoFigma\ProyectoFigma\obj\Debug\ProyectoFigma.pdb
+C:\DESARROLLO\3.DI\Learning\ProyectoFigma\ProyectoFigma\obj\Debug\ProyectoFigma.exe.config
+C:\DESARROLLO\3.DI\Learning\ProyectoFigma\ProyectoFigma\obj\Debug\ProyectoFigma.Vista.Inicio.resources
