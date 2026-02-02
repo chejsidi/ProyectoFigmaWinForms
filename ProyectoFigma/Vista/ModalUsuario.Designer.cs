@@ -19,14 +19,8 @@ namespace ProyectoFigma.Vista
         {
             this.lblTitulo = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtDireccion = new System.Windows.Forms.TextBox();
-            this.lblDireccion = new System.Windows.Forms.Label();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.lblTelefono = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.lblEmail = new System.Windows.Forms.Label();
-            this.txtDNI = new System.Windows.Forms.TextBox();
-            this.lblDNI = new System.Windows.Forms.Label();
             this.txtSegundoApellido = new System.Windows.Forms.TextBox();
             this.lblSegundoApellido = new System.Windows.Forms.Label();
             this.txtPrimerApellido = new System.Windows.Forms.TextBox();
@@ -58,14 +52,8 @@ namespace ProyectoFigma.Vista
     | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.txtDireccion);
-            this.panel1.Controls.Add(this.lblDireccion);
             this.panel1.Controls.Add(this.txtTelefono);
             this.panel1.Controls.Add(this.lblTelefono);
-            this.panel1.Controls.Add(this.txtEmail);
-            this.panel1.Controls.Add(this.lblEmail);
-            this.panel1.Controls.Add(this.txtDNI);
-            this.panel1.Controls.Add(this.lblDNI);
             this.panel1.Controls.Add(this.txtSegundoApellido);
             this.panel1.Controls.Add(this.lblSegundoApellido);
             this.panel1.Controls.Add(this.txtPrimerApellido);
@@ -75,105 +63,32 @@ namespace ProyectoFigma.Vista
             this.panel1.Location = new System.Drawing.Point(40, 86);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(453, 393);
+            this.panel1.Size = new System.Drawing.Size(453, 250);
             this.panel1.TabIndex = 1;
-            // 
-            // txtDireccion
-            // 
-            this.txtDireccion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-               | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDireccion.BackColor = System.Drawing.Color.White;
-            this.txtDireccion.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtDireccion.Location = new System.Drawing.Point(173, 273);
-            this.txtDireccion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtDireccion.Multiline = true;
-            this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(252, 91);
-            this.txtDireccion.TabIndex = 13;
-            // 
-            // lblDireccion
-            // 
-            this.lblDireccion.AutoSize = true;
-            this.lblDireccion.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblDireccion.Location = new System.Drawing.Point(20, 277);
-            this.lblDireccion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblDireccion.Name = "lblDireccion";
-            this.lblDireccion.Size = new System.Drawing.Size(75, 20);
-            this.lblDireccion.TabIndex = 12;
-            this.lblDireccion.Text = "Dirección:";
-            this.lblDireccion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtTelefono
             // 
             this.txtTelefono.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                 | System.Windows.Forms.AnchorStyles.Right)));
+         | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTelefono.BackColor = System.Drawing.Color.White;
             this.txtTelefono.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtTelefono.Location = new System.Drawing.Point(173, 230);
+            this.txtTelefono.Location = new System.Drawing.Point(173, 144);
             this.txtTelefono.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(252, 27);
-            this.txtTelefono.TabIndex = 11;
+            this.txtTelefono.TabIndex = 7;
             // 
             // lblTelefono
             // 
             this.lblTelefono.AutoSize = true;
             this.lblTelefono.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblTelefono.Location = new System.Drawing.Point(20, 234);
+            this.lblTelefono.Location = new System.Drawing.Point(20, 148);
             this.lblTelefono.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTelefono.Name = "lblTelefono";
             this.lblTelefono.Size = new System.Drawing.Size(70, 20);
-            this.lblTelefono.TabIndex = 10;
+            this.lblTelefono.TabIndex = 6;
             this.lblTelefono.Text = "Teléfono:";
             this.lblTelefono.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-         | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtEmail.BackColor = System.Drawing.Color.White;
-            this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtEmail.Location = new System.Drawing.Point(173, 187);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(252, 27);
-            this.txtEmail.TabIndex = 9;
-            // 
-            // lblEmail
-            // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblEmail.Location = new System.Drawing.Point(20, 191);
-            this.lblEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(49, 20);
-            this.lblEmail.TabIndex = 8;
-            this.lblEmail.Text = "Email:";
-            this.lblEmail.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtDNI
-            // 
-            this.txtDNI.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-     | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDNI.BackColor = System.Drawing.Color.White;
-            this.txtDNI.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtDNI.Location = new System.Drawing.Point(173, 144);
-            this.txtDNI.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtDNI.Name = "txtDNI";
-            this.txtDNI.Size = new System.Drawing.Size(252, 27);
-            this.txtDNI.TabIndex = 7;
-            // 
-            // lblDNI
-            // 
-            this.lblDNI.AutoSize = true;
-            this.lblDNI.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblDNI.Location = new System.Drawing.Point(20, 148);
-            this.lblDNI.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblDNI.Name = "lblDNI";
-            this.lblDNI.Size = new System.Drawing.Size(38, 20);
-            this.lblDNI.TabIndex = 6;
-            this.lblDNI.Text = "DNI:";
-            this.lblDNI.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtSegundoApellido
             // 
@@ -255,7 +170,7 @@ namespace ProyectoFigma.Vista
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(107, 505);
+            this.btnGuardar.Location = new System.Drawing.Point(107, 365);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(133, 43);
@@ -271,7 +186,7 @@ namespace ProyectoFigma.Vista
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(293, 505);
+            this.btnCancelar.Location = new System.Drawing.Point(293, 365);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(133, 43);
@@ -285,7 +200,7 @@ namespace ProyectoFigma.Vista
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(533, 578);
+            this.ClientSize = new System.Drawing.Size(533, 438);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.panel1);
@@ -294,7 +209,7 @@ namespace ProyectoFigma.Vista
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = true;
             this.MinimizeBox = true;
-            this.MinimumSize = new System.Drawing.Size(400, 500);
+            this.MinimumSize = new System.Drawing.Size(400, 400);
             this.Name = "ModalUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Usuario";
@@ -314,14 +229,8 @@ namespace ProyectoFigma.Vista
         private System.Windows.Forms.TextBox txtPrimerApellido;
         private System.Windows.Forms.Label lblSegundoApellido;
         private System.Windows.Forms.TextBox txtSegundoApellido;
-        private System.Windows.Forms.Label lblDNI;
-        private System.Windows.Forms.TextBox txtDNI;
-        private System.Windows.Forms.Label lblEmail;
-        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label lblTelefono;
         private System.Windows.Forms.TextBox txtTelefono;
-        private System.Windows.Forms.Label lblDireccion;
-        private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnCancelar;
     }

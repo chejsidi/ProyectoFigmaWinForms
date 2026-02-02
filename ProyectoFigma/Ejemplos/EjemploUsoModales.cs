@@ -15,76 +15,67 @@ namespace ProyectoFigma.Ejemplos
         // ============================================================
         public void EjemploAñadirUsuario()
         {
-            // Crear el modal en modo "Añadir"
-       ModalUsuario modal = new ModalUsuario(ModalUsuario.ModoModal.Añadir);
+  // Crear el modal en modo "Añadir"
+            ModalUsuario modal = new ModalUsuario(ModalUsuario.ModoModal.Añadir);
     
-       // Mostrar el modal y esperar el resultado
-         if (modal.ShowDialog() == DialogResult.OK)
-  {
+            // Mostrar el modal y esperar el resultado
+     if (modal.ShowDialog() == DialogResult.OK)
+          {
            // El usuario presionó GUARDAR
-   // Aquí puedes acceder a los datos ingresados:
-     string nombre = modal.Nombre;
-  string primerApellido = modal.PrimerApellido;
-   string segundoApellido = modal.SegundoApellido;
-    string dni = modal.DNI;
-                string email = modal.Email;
-   string telefono = modal.Telefono;
-      string direccion = modal.Direccion;
-        
-        // Aquí llamarías a tu método para guardar en la base de datos
-              // Por ejemplo:
- // GuardarUsuarioEnBD(nombre, primerApellido, segundoApellido, dni, email, telefono, direccion);
-                
-         MessageBox.Show("Usuario añadido correctamente");
-      // Actualizar el DataGridView o la lista
-     }
-          else
+            // Aquí puedes acceder a los datos ingresados:
+       string nombre = modal.Nombre;
+ string primerApellido = modal.PrimerApellido;
+       string segundoApellido = modal.SegundoApellido;
+          string telefono = modal.Telefono;
+    
+     // Aquí llamarías a tu método para guardar en la base de datos
+   // Por ejemplo:
+         // GuardarUsuarioEnBD(nombre, primerApellido, segundoApellido, telefono);
+  
+    MessageBox.Show("Usuario añadido correctamente");
+             // Actualizar el DataGridView o la lista
+            }
+     else
   {
-   // El usuario presionó CANCELAR
-              MessageBox.Show("Operación cancelada");
-       }
- }
+      // El usuario presionó CANCELAR
+           MessageBox.Show("Operación cancelada");
+   }
+        }
 
         // ============================================================
         // EJEMPLO 2: Usar el modal para EDITAR un USUARIO existente
         // ============================================================
      public void EjemploEditarUsuario()
         {
-       // Estos datos deberían venir de la fila seleccionada del DataGridView
-            string nombreActual = "Juan";
-         string primerApellidoActual = "García";
-            string segundoApellidoActual = "López";
- string dniActual = "12345678A";
-            string emailActual = "juan@mail.com";
-       string telefonoActual = "666777888";
-            string direccionActual = "Calle Principal 123";
+  // Estos datos deberían venir de la fila seleccionada del DataGridView
+       string nombreActual = "Juan";
+      string primerApellidoActual = "García";
+       string segundoApellidoActual = "López";
+     string telefonoActual = "666777888";
   
- // Crear el modal en modo "Editar" con los datos existentes
- ModalUsuario modal = new ModalUsuario(
-         ModalUsuario.ModoModal.Editar,
-    nombreActual,
-primerApellidoActual,
-             segundoApellidoActual,
-         dniActual,
-          emailActual,
-    telefonoActual,
-                direccionActual
-            );
-            
-   if (modal.ShowDialog() == DialogResult.OK)
-   {
-                // Obtener los datos modificados
- string nombre = modal.Nombre;
-       string primerApellido = modal.PrimerApellido;
-          // ... etc
-                
-    // Aquí llamarías a tu método para actualizar en la base de datos
- // Por ejemplo:
-    // ActualizarUsuarioEnBD(dni, nombre, primerApellido, ...);
+      // Crear el modal en modo "Editar" con los datos existentes
+     ModalUsuario modal = new ModalUsuario(
+    ModalUsuario.ModoModal.Editar,
+ nombreActual,
+    primerApellidoActual,
+          segundoApellidoActual,
+    telefonoActual
+     );
+     
+ if (modal.ShowDialog() == DialogResult.OK)
+      {
+     // Obtener los datos modificados
+  string nombre = modal.Nombre;
+  string primerApellido = modal.PrimerApellido;
+       // ... etc
     
-        MessageBox.Show("Usuario actualizado correctamente");
-     // Actualizar el DataGridView
-         }
+      // Aquí llamarías a tu método para actualizar en la base de datos
+        // Por ejemplo:
+        // ActualizarUsuarioEnBD(nombre, primerApellido, ...);
+       
+   MessageBox.Show("Usuario actualizado correctamente");
+        // Actualizar el DataGridView
+     }
         }
 
         // ============================================================
@@ -175,18 +166,18 @@ primerApellidoActual,
       // ============================================================
       // En el evento Click del botón "Añadir Usuario":
         private void btnAñadirUsuario_Click(object sender, EventArgs e)
-   {
- ModalUsuario modal = new ModalUsuario(ModalUsuario.ModoModal.Añadir);
-
-  if (modal.ShowDialog() == DialogResult.OK)
      {
-      // Guardar en base de datos
+     ModalUsuario modal = new ModalUsuario(ModalUsuario.ModoModal.Añadir);
+
+          if (modal.ShowDialog() == DialogResult.OK)
+       {
+     // Guardar en base de datos
        // ...
-              
-   // Refrescar el DataGridView
+      
+       // Refrescar el DataGridView
       // CargarUsuarios(); // método que recarga los datos
-            }
-        }
+      }
+  }
 
         // ============================================================
         // EJEMPLO 7: Cómo conectar el botón "Editar" en un formulario
@@ -194,44 +185,38 @@ primerApellidoActual,
         // En el evento Click del botón "Editar Usuario":
         private void btnEditarUsuario_Click(object sender, EventArgs e)
         {
-         // Verificar que hay una fila seleccionada
-            if (dataGridViewUsuarios.SelectedRows.Count == 0)
-       {
-    MessageBox.Show("Por favor, selecciona un usuario para editar", 
-    "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-    return;
-  }
-     
-            // Obtener los datos de la fila seleccionada
-            DataGridViewRow fila = dataGridViewUsuarios.SelectedRows[0];
-      string nombre = fila.Cells["Nombre"].Value.ToString();
-            string primerApellido = fila.Cells["PrimerApellido"].Value.ToString();
-       string segundoApellido = fila.Cells["SegundoApellido"].Value.ToString();
-            string dni = fila.Cells["DNI"].Value.ToString();
-            string email = fila.Cells["Email"].Value.ToString();
-            string telefono = fila.Cells["Telefono"].Value.ToString();
-            string direccion = fila.Cells["Direccion"].Value.ToString();
-     
-            // Abrir el modal con los datos
-            ModalUsuario modal = new ModalUsuario(
-        ModalUsuario.ModoModal.Editar,
- nombre,
-primerApellido,
-         segundoApellido,
-          dni,
-                email,
-   telefono,
-       direccion
-     );
-    
-            if (modal.ShowDialog() == DialogResult.OK)
+       // Verificar que hay una fila seleccionada
+      if (dataGridViewUsuarios.SelectedRows.Count == 0)
     {
-     // Actualizar en base de datos
-        // ...
-                
-        // Refrescar el DataGridView
-                // CargarUsuarios();
-      }
+         MessageBox.Show("Por favor, selecciona un usuario para editar", 
+  "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+   return;
+  }
+    
+     // Obtener los datos de la fila seleccionada
+       DataGridViewRow fila = dataGridViewUsuarios.SelectedRows[0];
+       string nombre = fila.Cells["Nombre"].Value.ToString();
+ string primerApellido = fila.Cells["Apellido_1"].Value.ToString();
+         string segundoApellido = fila.Cells["Apellido_2"].Value.ToString();
+ string telefono = fila.Cells["Telefono"].Value.ToString();
+      
+     // Abrir el modal con los datos
+    ModalUsuario modal = new ModalUsuario(
+    ModalUsuario.ModoModal.Editar,
+         nombre,
+     primerApellido,
+    segundoApellido,
+    telefono
+     );
+       
+       if (modal.ShowDialog() == DialogResult.OK)
+      {
+  // Actualizar en base de datos
+      // ...
+     
+       // Refrescar el DataGridView
+     // CargarUsuarios();
+    }
         }
         
         // Declaración ficticia del DataGridView para el ejemplo
@@ -241,71 +226,69 @@ primerApellido,
         // EJEMPLO 8: Usar el modal para ELIMINAR un USUARIO
         // ============================================================
         private void btnEliminarUsuario_Click(object sender, EventArgs e)
-    {
-            // Verificar que hay una fila seleccionada
-    if (dataGridViewUsuarios.SelectedRows.Count == 0)
+        {
+     // Verificar que hay una fila seleccionada
+if (dataGridViewUsuarios.SelectedRows.Count == 0)
  {
-          MessageBox.Show("Por favor, selecciona un usuario para eliminar", 
+  MessageBox.Show("Por favor, selecciona un usuario para eliminar", 
        "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
    return;
-      }
+    }
 
-     // Obtener datos de la fila seleccionada
-            DataGridViewRow fila = dataGridViewUsuarios.SelectedRows[0];
- string nombre = fila.Cells["Nombre"].Value.ToString();
- string dni = fila.Cells["DNI"].Value.ToString();
+  // Obtener datos de la fila seleccionada
+       DataGridViewRow fila = dataGridViewUsuarios.SelectedRows[0];
+string nombre = fila.Cells["Nombre"].Value.ToString();
 
-            // Crear el modal de confirmación
-            // Opción 1: Sin mostrar el nombre específico
- ModalEliminar modal = new ModalEliminar(ModalEliminar.TipoEntidad.Usuario);
+        // Mostrar mensaje de confirmación
+       var confirm = MessageBox.Show(
+       $"¿Seguro que quieres borrar el usuario {nombre}?",
+      "Confirmar",
+       MessageBoxButtons.YesNo);
 
-          // Opción 2: Mostrando el nombre del usuario
- // ModalEliminar modal = new ModalEliminar(ModalEliminar.TipoEntidad.Usuario, nombre);
-
-            if (modal.ShowDialog() == DialogResult.OK)
-   {
-      // Usuario presionó CONFIRMAR
+     if (confirm == DialogResult.Yes)
+{
      // Eliminar de la base de datos
-       // EliminarUsuarioEnBD(dni);
+       // EliminarUsuarioEnBD(id);
 
-    MessageBox.Show("Usuario eliminado correctamente");
-    // Refrescar el DataGridView
-                // CargarUsuarios();
+        MessageBox.Show("Usuario eliminado correctamente");
+   // Refrescar el DataGridView
+       // CargarUsuarios();
      }
-       else
-  {
-// Usuario presionó CANCELAR
-           MessageBox.Show("Eliminación cancelada");
-  }
+      else
+ {
+        // Usuario presionó CANCELAR
+     MessageBox.Show("Eliminación cancelada");
+            }
         }
-
      // ============================================================
         // EJEMPLO 9: Usar el modal para ELIMINAR un LIBRO
         // ============================================================
     private void btnEliminarLibro_Click(object sender, EventArgs e)
       {
-            // Verificar selección
-            if (dataGridViewLibros.SelectedRows.Count == 0)
-            {
-              MessageBox.Show("Selecciona un libro para eliminar");
-                return;
+          // Verificar selección
+  if (dataGridViewLibros.SelectedRows.Count == 0)
+ {
+         MessageBox.Show("Selecciona un libro para eliminar");
+   return;
             }
 
        DataGridViewRow fila = dataGridViewLibros.SelectedRows[0];
       string titulo = fila.Cells["Titulo"].Value.ToString();
-            string isbn = fila.Cells["ISBN"].Value.ToString();
 
-            // Mostrar modal con el título del libro
-            ModalEliminar modal = new ModalEliminar(ModalEliminar.TipoEntidad.Libro, titulo);
+     // Mostrar confirmación
+     var confirm = MessageBox.Show(
+    $"¿Seguro que quieres eliminar el libro '{titulo}'?",
+    "Confirmar",
+    MessageBoxButtons.YesNo);
 
-         if (modal.ShowDialog() == DialogResult.OK)
-            {
-                // Eliminar de BD
-   // EliminarLibroEnBD(isbn);
+            if (confirm == DialogResult.Yes)
+     {
+    // Eliminar de BD
+      // EliminarLibroEnBD(isbn);
 
-                MessageBox.Show("Libro eliminado correctamente");
-     }
-     }
+     MessageBox.Show("Libro eliminado correctamente");
+            }
+        }
 
         // ============================================================
         // EJEMPLO 10: Usar el modal para ELIMINAR un PRÉSTAMO
@@ -313,29 +296,29 @@ primerApellido,
         private void btnEliminarPrestamo_Click(object sender, EventArgs e)
         {
     // Verificar selección
-            if (dataGridViewPrestamos.SelectedRows.Count == 0)
-    {
-            MessageBox.Show("Selecciona un préstamo para eliminar");
-      return;
-            }
+if (dataGridViewPrestamos.SelectedRows.Count == 0)
+      {
+         MessageBox.Show("Selecciona un préstamo para eliminar");
+  return;
+      }
 
-         DataGridViewRow fila = dataGridViewPrestamos.SelectedRows[0];
-  int prestamoId = Convert.ToInt32(fila.Cells["Id"].Value);
+     DataGridViewRow fila = dataGridViewPrestamos.SelectedRows[0];
+            int prestamoId = Convert.ToInt32(fila.Cells["Id"].Value);
 
-            // Mostrar modal con el ID del préstamo
-        ModalEliminar modal = new ModalEliminar(
-       ModalEliminar.TipoEntidad.Prestamo, 
-                prestamoId.ToString()
-            );
+     // Mostrar confirmación
+       var confirm = MessageBox.Show(
+    $"¿Seguro que quieres eliminar el préstamo #{prestamoId}?",
+ "Confirmar",
+       MessageBoxButtons.YesNo);
 
-       if (modal.ShowDialog() == DialogResult.OK)
-    {
-                // Eliminar de BD
-              // EliminarPrestamoEnBD(prestamoId);
+       if (confirm == DialogResult.Yes)
+  {
+   // Eliminar de BD
+     // EliminarPrestamoEnBD(prestamoId);
 
-           MessageBox.Show("Préstamo eliminado correctamente");
-          }
-        }
+       MessageBox.Show("Préstamo eliminado correctamente");
+      }
+  }
 
         // Declaraciones ficticias para los ejemplos
         private DataGridView dataGridViewLibros = new DataGridView();

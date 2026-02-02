@@ -1,4 +1,5 @@
 ﻿using ProyectoFigma.Controlador;
+using ProyectoFigma.Modelo;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -41,9 +42,27 @@ namespace ProyectoFigma.Vista
 
         private void btnAñadir_Click(object sender, EventArgs e)
         {
-            //ModalUsuario modal = new ModalUsuario();
-            //modal.ShowDialog();
-            //CargarUsuarios();
+            ModalUsuario modal = new ModalUsuario(ModalUsuario.ModoModal.Añadir);
+
+            if (modal.ShowDialog() == DialogResult.OK)
+            {
+                // Crear el nuevo usuario con los datos del modal
+                Usuario nuevoUsuario = new Usuario
+                {
+                    Nombre = modal.Nombre,
+                    Apellido_1 = modal.PrimerApellido,
+                    Apellido_2 = modal.SegundoApellido,
+                    Telefono = int.TryParse(modal.Telefono, out int tel) ? tel : 0
+                };
+
+                // Agregar el usuario a la base de datos
+                controller.AgregarUsuario(nuevoUsuario);
+
+                // Recargar la lista de usuarios
+                CargarUsuarios();
+
+                MessageBox.Show("Usuario añadido correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void btnBorrar_Click(object sender, EventArgs e)

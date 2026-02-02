@@ -39,7 +39,7 @@ namespace ProyectoFigma.Controlador
             {
                 conn.Open();
                 var cmd = new SqliteCommand(
-                    "INSERT INTO Usuarios (Nombre, Apellido_1, Apellido_2, Telefono) VALUES (@n,@a1,@a2,@t)", conn);
+                    "INSERT INTO Usuarios (Nombre, Apellido_1, Apellido_2, Telefono) VALUES (@n, @a1, @a2, @t)", conn);
 
                 cmd.Parameters.AddWithValue("@n", u.Nombre);
                 cmd.Parameters.AddWithValue("@a1", u.Apellido_1);
