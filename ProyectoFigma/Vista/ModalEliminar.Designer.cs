@@ -1,4 +1,4 @@
-namespace ProyectoFigma.Vista
+ï»¿namespace ProyectoFigma.Vista
 {
     partial class ModalEliminar
     {
@@ -24,15 +24,15 @@ namespace ProyectoFigma.Vista
             // 
             // lblMensaje
             // 
-            this.lblMensaje.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.lblMensaje.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMensaje.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.lblMensaje.Location = new System.Drawing.Point(30, 30);
             this.lblMensaje.Name = "lblMensaje";
             this.lblMensaje.Size = new System.Drawing.Size(310, 60);
             this.lblMensaje.TabIndex = 0;
-            this.lblMensaje.Text = "¿Estás seguro que deseas borrar el usuario?";
+            this.lblMensaje.Text = "Â¿Estas seguro que deseas borrar el usuario?";
             this.lblMensaje.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnConfirmar
@@ -74,9 +74,6 @@ namespace ProyectoFigma.Vista
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.lblMensaje);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
-            this.MaximizeBox = true;
-            this.MinimizeBox = true;
             this.MinimumSize = new System.Drawing.Size(300, 150);
             this.Name = "ModalEliminar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
