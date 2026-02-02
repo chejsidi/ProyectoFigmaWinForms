@@ -39,3 +39,4 @@ C:\dam\di\.net\parte-2\ProyectoFigmaWinForms\ProyectoFigma\obj\Debug\ProyectoFig
 C:\dam\di\.net\parte-2\ProyectoFigmaWinForms\ProyectoFigma\obj\Debug\ProyectoFigma.Vista.ModalLibro.resources
 C:\dam\di\.net\parte-2\ProyectoFigmaWinForms\ProyectoFigma\obj\Debug\ProyectoFigma.Vista.ModalPrestamo.resources
 C:\dam\di\.net\parte-2\ProyectoFigmaWinForms\ProyectoFigma\obj\Debug\ProyectoFigma.Vista.ModalUsuario.resources
+C:\dam\di\.net\parte-2\ProyectoFigmaWinForms\ProyectoFigma\obj\Debug\ProyectoFigma.Vista.ModalEliminar.resources

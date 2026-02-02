@@ -1,22 +1,22 @@
 namespace ProyectoFigma.Vista
 {
     partial class ModalUsuario
-  {
+    {
         private System.ComponentModel.IContainer components = null;
 
         protected override void Dispose(bool disposing)
-      {
-    if (disposing && (components != null))
-     {
-         components.Dispose();
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
             }
-       base.Dispose(disposing);
+            base.Dispose(disposing);
         }
 
-  #region Windows Form Designer generated code
+        #region Windows Form Designer generated code
 
         private void InitializeComponent()
- {
+        {
             this.lblTitulo = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtDireccion = new System.Windows.Forms.TextBox();
@@ -53,6 +53,9 @@ namespace ProyectoFigma.Vista
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+  | System.Windows.Forms.AnchorStyles.Left)
+    | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.txtDireccion);
@@ -77,6 +80,8 @@ namespace ProyectoFigma.Vista
             // 
             // txtDireccion
             // 
+            this.txtDireccion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+               | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDireccion.BackColor = System.Drawing.Color.White;
             this.txtDireccion.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtDireccion.Location = new System.Drawing.Point(173, 273);
@@ -100,6 +105,8 @@ namespace ProyectoFigma.Vista
             // 
             // txtTelefono
             // 
+            this.txtTelefono.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                 | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTelefono.BackColor = System.Drawing.Color.White;
             this.txtTelefono.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtTelefono.Location = new System.Drawing.Point(173, 230);
@@ -122,6 +129,8 @@ namespace ProyectoFigma.Vista
             // 
             // txtEmail
             // 
+            this.txtEmail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+         | System.Windows.Forms.AnchorStyles.Right)));
             this.txtEmail.BackColor = System.Drawing.Color.White;
             this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtEmail.Location = new System.Drawing.Point(173, 187);
@@ -144,6 +153,8 @@ namespace ProyectoFigma.Vista
             // 
             // txtDNI
             // 
+            this.txtDNI.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+     | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDNI.BackColor = System.Drawing.Color.White;
             this.txtDNI.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtDNI.Location = new System.Drawing.Point(173, 144);
@@ -166,6 +177,8 @@ namespace ProyectoFigma.Vista
             // 
             // txtSegundoApellido
             // 
+            this.txtSegundoApellido.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+        | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSegundoApellido.BackColor = System.Drawing.Color.White;
             this.txtSegundoApellido.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtSegundoApellido.Location = new System.Drawing.Point(173, 101);
@@ -188,6 +201,8 @@ namespace ProyectoFigma.Vista
             // 
             // txtPrimerApellido
             // 
+            this.txtPrimerApellido.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+              | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPrimerApellido.BackColor = System.Drawing.Color.White;
             this.txtPrimerApellido.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtPrimerApellido.Location = new System.Drawing.Point(173, 58);
@@ -210,6 +225,8 @@ namespace ProyectoFigma.Vista
             // 
             // txtNombre
             // 
+            this.txtNombre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+       | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNombre.BackColor = System.Drawing.Color.White;
             this.txtNombre.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtNombre.Location = new System.Drawing.Point(173, 15);
@@ -233,6 +250,7 @@ namespace ProyectoFigma.Vista
             // 
             // btnGuardar
             // 
+            this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
@@ -248,6 +266,7 @@ namespace ProyectoFigma.Vista
             // 
             // btnCancelar
             // 
+            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
@@ -271,10 +290,11 @@ namespace ProyectoFigma.Vista
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblTitulo);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            this.MaximizeBox = true;
+            this.MinimizeBox = true;
+            this.MinimumSize = new System.Drawing.Size(400, 500);
             this.Name = "ModalUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Usuario";
@@ -288,21 +308,21 @@ namespace ProyectoFigma.Vista
 
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Panel panel1;
-   private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.TextBox txtNombre;
-   private System.Windows.Forms.Label lblPrimerApellido;
-      private System.Windows.Forms.TextBox txtPrimerApellido;
+        private System.Windows.Forms.Label lblPrimerApellido;
+        private System.Windows.Forms.TextBox txtPrimerApellido;
         private System.Windows.Forms.Label lblSegundoApellido;
         private System.Windows.Forms.TextBox txtSegundoApellido;
         private System.Windows.Forms.Label lblDNI;
         private System.Windows.Forms.TextBox txtDNI;
         private System.Windows.Forms.Label lblEmail;
-      private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label lblTelefono;
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label lblDireccion;
-  private System.Windows.Forms.TextBox txtDireccion;
-  private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.TextBox txtDireccion;
+        private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnCancelar;
     }
 }
