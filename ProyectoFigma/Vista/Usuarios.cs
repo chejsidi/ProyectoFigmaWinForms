@@ -41,9 +41,9 @@ namespace ProyectoFigma.Vista
 
         private void btnAñadir_Click(object sender, EventArgs e)
         {
-            //ModalUsuario modal = new ModalUsuario();
-            //modal.ShowDialog();
-            //CargarUsuarios();
+            ModalUsuario modal = new ModalUsuario();
+            modal.ShowDialog();
+            CargarUsuarios();
         }
 
     }
