@@ -12,12 +12,12 @@ namespace ProyectoFigma.Vista
 {
     public partial class Inicio : Form
     {
+        private static Inicio formulario;
         public Inicio()
         {
             InitializeComponent();
             label1.Text = "Tú librería \n En \n Vitoria-Gasteiz";
         }
-        private static Inicio formulario;
         public static Inicio GetInstance()
         {
             if (formulario == null)

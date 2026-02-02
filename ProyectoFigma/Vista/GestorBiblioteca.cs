@@ -30,5 +30,18 @@ namespace ProyectoFigma.Vista
             formulario.Dock = DockStyle.Fill;
             formulario.Show();
         }
+
+        private void labelUsuarios_Click(object sender, EventArgs e)
+        {
+            var form = Usuarios.GetInstance();
+            if (this.ActiveMdiChild != null)
+            {
+                this.ActiveMdiChild.Hide();
+            }
+
+            form.MdiParent = this;
+            form.Dock = DockStyle.Fill;
+            form.Show();
+        }
     }
 }
