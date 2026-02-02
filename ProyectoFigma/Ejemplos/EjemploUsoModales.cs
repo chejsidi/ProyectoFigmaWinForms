@@ -236,5 +236,109 @@ primerApellido,
         
         // Declaración ficticia del DataGridView para el ejemplo
         private DataGridView dataGridViewUsuarios = new DataGridView();
+
+        // ============================================================
+        // EJEMPLO 8: Usar el modal para ELIMINAR un USUARIO
+        // ============================================================
+        private void btnEliminarUsuario_Click(object sender, EventArgs e)
+    {
+            // Verificar que hay una fila seleccionada
+    if (dataGridViewUsuarios.SelectedRows.Count == 0)
+ {
+          MessageBox.Show("Por favor, selecciona un usuario para eliminar", 
+       "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+   return;
+      }
+
+     // Obtener datos de la fila seleccionada
+            DataGridViewRow fila = dataGridViewUsuarios.SelectedRows[0];
+ string nombre = fila.Cells["Nombre"].Value.ToString();
+ string dni = fila.Cells["DNI"].Value.ToString();
+
+            // Crear el modal de confirmación
+            // Opción 1: Sin mostrar el nombre específico
+ ModalEliminar modal = new ModalEliminar(ModalEliminar.TipoEntidad.Usuario);
+
+          // Opción 2: Mostrando el nombre del usuario
+ // ModalEliminar modal = new ModalEliminar(ModalEliminar.TipoEntidad.Usuario, nombre);
+
+            if (modal.ShowDialog() == DialogResult.OK)
+   {
+      // Usuario presionó CONFIRMAR
+     // Eliminar de la base de datos
+       // EliminarUsuarioEnBD(dni);
+
+    MessageBox.Show("Usuario eliminado correctamente");
+    // Refrescar el DataGridView
+                // CargarUsuarios();
+     }
+       else
+  {
+// Usuario presionó CANCELAR
+           MessageBox.Show("Eliminación cancelada");
+  }
+        }
+
+     // ============================================================
+        // EJEMPLO 9: Usar el modal para ELIMINAR un LIBRO
+        // ============================================================
+    private void btnEliminarLibro_Click(object sender, EventArgs e)
+      {
+            // Verificar selección
+            if (dataGridViewLibros.SelectedRows.Count == 0)
+            {
+              MessageBox.Show("Selecciona un libro para eliminar");
+                return;
+            }
+
+       DataGridViewRow fila = dataGridViewLibros.SelectedRows[0];
+      string titulo = fila.Cells["Titulo"].Value.ToString();
+            string isbn = fila.Cells["ISBN"].Value.ToString();
+
+            // Mostrar modal con el título del libro
+            ModalEliminar modal = new ModalEliminar(ModalEliminar.TipoEntidad.Libro, titulo);
+
+         if (modal.ShowDialog() == DialogResult.OK)
+            {
+                // Eliminar de BD
+   // EliminarLibroEnBD(isbn);
+
+                MessageBox.Show("Libro eliminado correctamente");
+     }
+     }
+
+        // ============================================================
+        // EJEMPLO 10: Usar el modal para ELIMINAR un PRÉSTAMO
+        // ============================================================
+        private void btnEliminarPrestamo_Click(object sender, EventArgs e)
+        {
+    // Verificar selección
+            if (dataGridViewPrestamos.SelectedRows.Count == 0)
+    {
+            MessageBox.Show("Selecciona un préstamo para eliminar");
+      return;
+            }
+
+         DataGridViewRow fila = dataGridViewPrestamos.SelectedRows[0];
+  int prestamoId = Convert.ToInt32(fila.Cells["Id"].Value);
+
+            // Mostrar modal con el ID del préstamo
+        ModalEliminar modal = new ModalEliminar(
+       ModalEliminar.TipoEntidad.Prestamo, 
+                prestamoId.ToString()
+            );
+
+       if (modal.ShowDialog() == DialogResult.OK)
+    {
+                // Eliminar de BD
+              // EliminarPrestamoEnBD(prestamoId);
+
+           MessageBox.Show("Préstamo eliminado correctamente");
+          }
+        }
+
+        // Declaraciones ficticias para los ejemplos
+        private DataGridView dataGridViewLibros = new DataGridView();
+     private DataGridView dataGridViewPrestamos = new DataGridView();
     }
 }
