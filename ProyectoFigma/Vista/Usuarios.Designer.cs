@@ -71,6 +71,7 @@
             this.bBorrar.TabIndex = 6;
             this.bBorrar.Text = "BORRAR";
             this.bBorrar.UseVisualStyleBackColor = false;
+            this.bBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // lblUsuarios
             // 
@@ -95,6 +96,7 @@
             this.bAnadir.TabIndex = 3;
             this.bAnadir.Text = "AÑADIR";
             this.bAnadir.UseVisualStyleBackColor = false;
+            this.bAnadir.Click += new System.EventHandler(this.btnAñadir_Click);
             // 
             // dGridUsuarios
             // 

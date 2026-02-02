@@ -41,9 +41,31 @@ namespace ProyectoFigma.Vista
 
         private void btnAñadir_Click(object sender, EventArgs e)
         {
-            ModalUsuario modal = new ModalUsuario();
-            modal.ShowDialog();
-            CargarUsuarios();
+            //ModalUsuario modal = new ModalUsuario();
+            //modal.ShowDialog();
+            //CargarUsuarios();
+        }
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            if (dGridUsuarios.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Selecciona un usuario");
+                return;
+            }
+
+            int id = (int)dGridUsuarios.SelectedRows[0].Cells["Id"].Value;
+
+            var confirm = MessageBox.Show(
+                "¿Seguro que quieres borrar este usuario?",
+                "Confirmar",
+                MessageBoxButtons.YesNo);
+
+            if (confirm == DialogResult.Yes)
+            {
+                controller.BorrarUsuario(id);
+                CargarUsuarios();
+            }
         }
 
     }

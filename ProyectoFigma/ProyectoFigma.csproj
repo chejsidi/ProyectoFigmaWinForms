@@ -115,6 +115,12 @@
     <Compile Include="Vista\Inicio.Designer.cs">
       <DependentUpon>Inicio.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\ModalEliminar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\ModalEliminar.Designer.cs">
+      <DependentUpon>ModalEliminar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\ModalLibro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +164,9 @@
     <Content Include="Biblioteca.db">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <EmbeddedResource Include="Vista\ModalEliminar.resx">
+      <DependentUpon>ModalEliminar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\ModalLibro.resx">
       <DependentUpon>ModalLibro.cs</DependentUpon>
     </EmbeddedResource>
