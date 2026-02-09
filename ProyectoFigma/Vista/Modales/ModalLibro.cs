@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Windows.Forms;
 
 namespace ProyectoFigma.Vista
@@ -7,7 +7,7 @@ namespace ProyectoFigma.Vista
     {
         public enum ModoModal
         {
-            Añadir,
+            AÃ±adir,
             Editar
         }
 
@@ -25,7 +25,7 @@ namespace ProyectoFigma.Vista
             this.modo = modo;
             ConfigurarModal();
 
-            // Configurar rango del NumericUpDown para año
+            // Configurar rango del NumericUpDown para aÃ±o
             numAno.Minimum = 1500;
             numAno.Maximum = DateTime.Now.Year;
             numAno.Value = DateTime.Now.Year;
@@ -43,19 +43,19 @@ namespace ProyectoFigma.Vista
             txtAutor.Text = escritor;
             txtSinopsis.Text = sinopsis;
 
-            // Aseguramos que el año esté dentro del rango
+            // Aseguramos que el aÃ±o estÃ© dentro del rango
             numAno.Value = Math.Min(Math.Max(ano_Edicion, (int)numAno.Minimum), (int)numAno.Maximum);
 
-            // Aseguramos que la disponibilidad esté dentro del rango
+            // Aseguramos que la disponibilidad estÃ© dentro del rango
             numDisp.Value = Math.Min(Math.Max(disponible, (int)numDisp.Minimum), (int)numDisp.Maximum);
         }
 
         private void ConfigurarModal()
         {
-            if (modo == ModoModal.Añadir)
+            if (modo == ModoModal.AÃ±adir)
             {
-                this.Text = "Añadir Libro";
-                lblTitulo.Text = "Añadir Libro";
+                this.Text = "AÃ±adir Libro";
+                lblTitulo.Text = "AÃ±adir Libro";
             }
             else
             {
@@ -70,7 +70,7 @@ namespace ProyectoFigma.Vista
             {
                 Titulo = txtTitulo.Text.Trim();
                 Escritor = txtAutor.Text.Trim();
-                Ano_Edicion = (int)numAno.Value;  // ? CORREGIDO
+                Ano_Edicion = (int)numAno.Value;  // âœ… CORREGIDO
                 Sinopsis = txtSinopsis.Text.Trim();
                 Disponible = (int)numDisp.Value;
 
@@ -89,21 +89,21 @@ namespace ProyectoFigma.Vista
         {
             if (string.IsNullOrWhiteSpace(txtTitulo.Text))
             {
-                MessageBox.Show("El título es obligatorio", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("El tÃ­tulo es obligatorio", "ValidaciÃ³n", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtTitulo.Focus();
                 return false;
             }
 
             if (string.IsNullOrWhiteSpace(txtAutor.Text))
             {
-                MessageBox.Show("El autor es obligatorio", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("El autor es obligatorio", "ValidaciÃ³n", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtAutor.Focus();
                 return false;
             }
 
             if (numAno.Value < 1500 || numAno.Value > DateTime.Now.Year)
             {
-                MessageBox.Show($"El año debe estar entre 1500 y {DateTime.Now.Year}", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"El aÃ±o debe estar entre 1500 y {DateTime.Now.Year}", "ValidaciÃ³n", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 

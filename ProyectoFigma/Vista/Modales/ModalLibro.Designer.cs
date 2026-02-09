@@ -24,7 +24,6 @@ namespace ProyectoFigma.Vista
             this.numAno = new System.Windows.Forms.NumericUpDown();
             this.numDisp = new System.Windows.Forms.NumericUpDown();
             this.lblDisponible = new System.Windows.Forms.Label();
-            this.txtSinopsis = new System.Windows.Forms.TextBox();
             this.lblEditorial = new System.Windows.Forms.Label();
             this.lblAno_Edicion = new System.Windows.Forms.Label();
             this.txtAutor = new System.Windows.Forms.TextBox();
@@ -33,6 +32,7 @@ namespace ProyectoFigma.Vista
             this.lblTituloLibro = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.txtSinopsis = new System.Windows.Forms.RichTextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numAno)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDisp)).BeginInit();
@@ -57,10 +57,10 @@ namespace ProyectoFigma.Vista
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.txtSinopsis);
             this.panel1.Controls.Add(this.numAno);
             this.panel1.Controls.Add(this.numDisp);
             this.panel1.Controls.Add(this.lblDisponible);
-            this.panel1.Controls.Add(this.txtSinopsis);
             this.panel1.Controls.Add(this.lblEditorial);
             this.panel1.Controls.Add(this.lblAno_Edicion);
             this.panel1.Controls.Add(this.txtAutor);
@@ -77,19 +77,32 @@ namespace ProyectoFigma.Vista
             this.numAno.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.numAno.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.numAno.Location = new System.Drawing.Point(130, 88);
-            this.numAno.Maximum = DateTime.Now.Year;
-            this.numAno.Minimum = 1500;
+            this.numAno.Location = new System.Drawing.Point(130, 73);
+            this.numAno.Maximum = new decimal(new int[] {
+            2026,
+            0,
+            0,
+            0});
+            this.numAno.Minimum = new decimal(new int[] {
+            1500,
+            0,
+            0,
+            0});
             this.numAno.Name = "numAno";
             this.numAno.Size = new System.Drawing.Size(190, 23);
             this.numAno.TabIndex = 14;
+            this.numAno.Value = new decimal(new int[] {
+            1500,
+            0,
+            0,
+            0});
             // 
             // numDisp
             // 
             this.numDisp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.numDisp.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.numDisp.Location = new System.Drawing.Point(130, 177);
+            this.numDisp.Location = new System.Drawing.Point(130, 206);
             this.numDisp.Maximum = new decimal(new int[] {
             1,
             0,
@@ -109,29 +122,18 @@ namespace ProyectoFigma.Vista
             // 
             this.lblDisponible.AutoSize = true;
             this.lblDisponible.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblDisponible.Location = new System.Drawing.Point(15, 180);
+            this.lblDisponible.Location = new System.Drawing.Point(15, 209);
             this.lblDisponible.Name = "lblDisponible";
             this.lblDisponible.Size = new System.Drawing.Size(66, 15);
             this.lblDisponible.TabIndex = 8;
             this.lblDisponible.Text = "Disponible:";
             this.lblDisponible.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // txtSinopsis
-            // 
-            this.txtSinopsis.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSinopsis.BackColor = System.Drawing.Color.White;
-            this.txtSinopsis.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtSinopsis.Location = new System.Drawing.Point(130, 132);
-            this.txtSinopsis.Name = "txtSinopsis";
-            this.txtSinopsis.Size = new System.Drawing.Size(190, 23);
-            this.txtSinopsis.TabIndex = 7;
-            // 
             // lblEditorial
             // 
             this.lblEditorial.AutoSize = true;
             this.lblEditorial.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblEditorial.Location = new System.Drawing.Point(15, 135);
+            this.lblEditorial.Location = new System.Drawing.Point(15, 102);
             this.lblEditorial.Name = "lblEditorial";
             this.lblEditorial.Size = new System.Drawing.Size(53, 15);
             this.lblEditorial.TabIndex = 6;
@@ -142,7 +144,7 @@ namespace ProyectoFigma.Vista
             // 
             this.lblAno_Edicion.AutoSize = true;
             this.lblAno_Edicion.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblAno_Edicion.Location = new System.Drawing.Point(15, 90);
+            this.lblAno_Edicion.Location = new System.Drawing.Point(15, 75);
             this.lblAno_Edicion.Name = "lblAno_Edicion";
             this.lblAno_Edicion.Size = new System.Drawing.Size(71, 15);
             this.lblAno_Edicion.TabIndex = 4;
@@ -223,6 +225,14 @@ namespace ProyectoFigma.Vista
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // txtSinopsis
+            // 
+            this.txtSinopsis.Location = new System.Drawing.Point(130, 102);
+            this.txtSinopsis.Name = "txtSinopsis";
+            this.txtSinopsis.Size = new System.Drawing.Size(190, 96);
+            this.txtSinopsis.TabIndex = 15;
+            this.txtSinopsis.Text = "";
+            // 
             // ModalLibro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -255,11 +265,11 @@ namespace ProyectoFigma.Vista
         private System.Windows.Forms.TextBox txtAutor;
         private System.Windows.Forms.Label lblAno_Edicion;
         private System.Windows.Forms.Label lblEditorial;
-        private System.Windows.Forms.TextBox txtSinopsis;
         private System.Windows.Forms.Label lblDisponible;
         private System.Windows.Forms.NumericUpDown numDisp;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.NumericUpDown numAno;
+        private System.Windows.Forms.RichTextBox txtSinopsis;
     }
 }

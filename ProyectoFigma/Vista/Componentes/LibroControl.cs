@@ -23,7 +23,7 @@ namespace ProyectoFigma.Vista.Controles
             lblTitulo.Text = Libro.Titulo;
             lblAutor.Text = "Autor: " + Libro.Escritor;
             lblAno.Text = "Año: " + Libro.Ano_Edicion;
-            lblDisponible.Text = "Disponible: " + Libro.Disponible;
+            lblDisponible.Text = "Disponible: " + (Libro.Disponible == 1 ? "Sí" : "No"); ;
             lblSinopsis.Text = "Sinopsis: " + Libro.Sinopsis;
         }
 
