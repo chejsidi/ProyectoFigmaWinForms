@@ -46,6 +46,14 @@ namespace ProyectoFigma.Vista
                 dGridPrestamos.Columns["UsuarioNombre"].HeaderText = "Usuario";
             if (dGridPrestamos.Columns["LibroTitulo"] != null)
                 dGridPrestamos.Columns["LibroTitulo"].HeaderText = "Libro";
+
+            // Evitar edición de campos que no pertenecen al préstamo
+            if (dGridPrestamos.Columns["UsuarioNombre"] != null)
+                dGridPrestamos.Columns["UsuarioNombre"].ReadOnly = true;
+            if (dGridPrestamos.Columns["LibroTitulo"] != null)
+                dGridPrestamos.Columns["LibroTitulo"].ReadOnly = true;
+            if (dGridPrestamos.Columns["Id"] != null)
+                dGridPrestamos.Columns["Id"].ReadOnly = true;
         }
 
         private void btnAñadir_Click(object sender, EventArgs e)
