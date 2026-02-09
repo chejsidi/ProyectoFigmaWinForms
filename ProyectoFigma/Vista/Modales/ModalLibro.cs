@@ -15,15 +15,14 @@ namespace ProyectoFigma.Vista
         private ModoModal modo;
 
         // Propiedades para acceder a los datos del formulario
-   public string Titulo { get; set; }
+        public string Titulo { get; set; }
         public string Autor { get; set; }
-  public string ISBN { get; set; }
-        public string Editorial { get; set; }
- public int AnioPublicacion { get; set; }
-      public string Genero { get; set; }
-    public int Cantidad { get; set; }
+        public string Escritor { get; set; }
+        public string Ano_Edicion { get; set; }
+        public string Sinopsis { get; set; }
+        public int Disponible { get; set; }
 
-     public ModalLibro(ModoModal modo)
+        public ModalLibro(ModoModal modo)
         {
         InitializeComponent();
             this.modo = modo;
