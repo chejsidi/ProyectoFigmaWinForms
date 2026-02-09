@@ -15,7 +15,7 @@ namespace ProyectoFigma.Controlador
             using (var conn = new SqliteConnection(conexion))
             {
                 conn.Open();
-                var cmd = new SqliteCommand("SELECT * FROM Usuarios", conn);
+                var cmd = new SqliteCommand("SELECT * FROM Libros", conn);
                 var reader = cmd.ExecuteReader();
 
                 while (reader.Read())

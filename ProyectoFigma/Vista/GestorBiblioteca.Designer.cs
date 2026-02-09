@@ -196,6 +196,7 @@
             this.labelLibros.TabIndex = 3;
             this.labelLibros.Text = "LIBROS";
             this.labelLibros.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelLibros.Click += new System.EventHandler(this.labeLibros_Click);
             // 
             // labelUsuarios
             // 

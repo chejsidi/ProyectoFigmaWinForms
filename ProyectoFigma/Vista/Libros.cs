@@ -46,19 +46,17 @@ namespace ProyectoFigma.Vista
 
             if (modal.ShowDialog() == DialogResult.OK)
             {
-                // Crear el nuevo Libro con los datos del modal
                 Libro nuevoLibro = new Libro
                 {
                     Titulo = modal.Titulo,
                     Escritor = modal.Escritor,
-                    Apellido_2 = modal.SegundoApellido,
-                    Telefono = int.TryParse(modal.Telefono, out int tel) ? tel : 0
+                    Ano_Edicion = modal.Ano_Edicion,
+                    Sinopsis = modal.Sinopsis,
+                    Disponible = modal.Disponible,
                 };
 
-                // Agregar el Libro a la base de datos
                 controller.AgregarLibro(nuevoLibro);
 
-                // Recargar la lista de Libros
                 CargarLibros();
 
                 MessageBox.Show("Libro añadido correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);

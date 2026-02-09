@@ -14,103 +14,88 @@ namespace ProyectoFigma.Vista
 
         private ModoModal modo;
 
-        // Propiedades para acceder a los datos del formulario
         public string Titulo { get; set; }
         public string Autor { get; set; }
         public string Escritor { get; set; }
-        public string Ano_Edicion { get; set; }
+        public int Ano_Edicion { get; set; }
         public string Sinopsis { get; set; }
         public int Disponible { get; set; }
 
         public ModalLibro(ModoModal modo)
         {
-        InitializeComponent();
+            InitializeComponent();
             this.modo = modo;
             ConfigurarModal();
         }
 
-        // Constructor sobrecargado para edición con datos existentes
-        public ModalLibro(ModoModal modo, string titulo, string autor, string isbn, 
-    string editorial, int anioPublicacion, string genero, int cantidad) : this(modo)
+        public ModalLibro(ModoModal modo, string titulo, string escritor, int ano_Edicion, string sinopsis, int disponible) : this(modo)
         {
             txtTitulo.Text = titulo;
-            txtAutor.Text = autor;
-            txtISBN.Text = isbn;
-            txtEditorial.Text = editorial;
-            numAnio.Value = anioPublicacion;
-      txtGenero.Text = genero;
-            numCantidad.Value = cantidad;
+            txtAutor.Text = escritor;
+            numDisp.Value = ano_Edicion;
+            txtSinopsis.Text = sinopsis;
+            numDisp.Value = disponible;
         }
 
-      private void ConfigurarModal()
+        private void ConfigurarModal()
         {
-     if (modo == ModoModal.Añadir)
-   {
-              this.Text = "Añadir Libro";
-     lblTitulo.Text = "Añadir Libro";
-       }
-      else
-         {
-       this.Text = "Editar Libro";
-        lblTitulo.Text = "Editar Libro";
-        }
-        }
-
-   private void btnGuardar_Click(object sender, EventArgs e)
-  {
-      if (ValidarCampos())
+            if (modo == ModoModal.Añadir)
             {
-        // Guardar los valores en las propiedades
-           Titulo = txtTitulo.Text.Trim();
-     Autor = txtAutor.Text.Trim();
-                ISBN = txtISBN.Text.Trim();
-        Editorial = txtEditorial.Text.Trim();
-             AnioPublicacion = (int)numAnio.Value;
- Genero = txtGenero.Text.Trim();
-     Cantidad = (int)numCantidad.Value;
+                this.Text = "Añadir Libro";
+                lblTitulo.Text = "Añadir Libro";
+            }
+            else
+            {
+                this.Text = "Editar Libro";
+                lblTitulo.Text = "Editar Libro";
+            }
+        }
 
- this.DialogResult = DialogResult.OK;
- this.Close();
-    }
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            if (ValidarCampos())
+            {
+                Titulo = txtTitulo.Text.Trim();
+                Escritor = txtAutor.Text.Trim();
+                Ano_Edicion = (int)numDisp.Value;
+                Sinopsis = txtSinopsis.Text.Trim();
+                Disponible = (int)numDisp.Value;
+
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-  this.DialogResult = DialogResult.Cancel;
+            this.DialogResult = DialogResult.Cancel;
             this.Close();
- }
+        }
 
         private bool ValidarCampos()
         {
-if (string.IsNullOrWhiteSpace(txtTitulo.Text))
+            if (string.IsNullOrWhiteSpace(txtTitulo.Text))
             {
-        MessageBox.Show("El título es obligatorio", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-        txtTitulo.Focus();
-return false;
+                MessageBox.Show("El título es obligatorio", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtTitulo.Focus();
+                return false;
             }
 
             if (string.IsNullOrWhiteSpace(txtAutor.Text))
-    {
-  MessageBox.Show("El autor es obligatorio", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-     txtAutor.Focus();
-        return false;
-            }
-
-  if (string.IsNullOrWhiteSpace(txtISBN.Text))
             {
-          MessageBox.Show("El ISBN es obligatorio", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-          txtISBN.Focus();
-          return false;
+                MessageBox.Show("El autor es obligatorio", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtAutor.Focus();
+                return false;
             }
 
-    if (numAnio.Value == 0)
+            if (numAno.Value == 0)
             {
-     MessageBox.Show("El año de publicación es obligatorio", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-        numAnio.Focus();
-return false;
+                MessageBox.Show("El año de publicación es obligatorio", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
             }
 
-         return true;
-   }
+
+            return true;
+        }
     }
 }

@@ -98,8 +98,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controlador\LibroController.cs" />
     <Compile Include="Controlador\UsuarioController.cs" />
-    <Compile Include="Ejemplos\EjemploUsoModales.cs" />
+    <Compile Include="Modelo\Libro.cs" />
+    <Compile Include="Modelo\Prestamo.cs" />
     <Compile Include="Modelo\Usuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -115,23 +117,29 @@
     <Compile Include="Vista\Inicio.Designer.cs">
       <DependentUpon>Inicio.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\ModalLibro.cs">
+    <Compile Include="Vista\Modales\ModalLibro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\ModalLibro.Designer.cs">
+    <Compile Include="Vista\Modales\ModalLibro.Designer.cs">
       <DependentUpon>ModalLibro.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\ModalPrestamo.cs">
+    <Compile Include="Vista\Modales\ModalPrestamo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\ModalPrestamo.Designer.cs">
+    <Compile Include="Vista\Modales\ModalPrestamo.Designer.cs">
       <DependentUpon>ModalPrestamo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\ModalUsuario.cs">
+    <Compile Include="Vista\Modales\ModalUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\ModalUsuario.Designer.cs">
+    <Compile Include="Vista\Modales\ModalUsuario.Designer.cs">
       <DependentUpon>ModalUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Libros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Libros.Designer.cs">
+      <DependentUpon>Libros.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\Usuarios.cs">
       <SubType>Form</SubType>
@@ -158,14 +166,17 @@
     <Content Include="Biblioteca.db">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <EmbeddedResource Include="Vista\ModalLibro.resx">
+    <EmbeddedResource Include="Vista\Modales\ModalLibro.resx">
       <DependentUpon>ModalLibro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\ModalPrestamo.resx">
+    <EmbeddedResource Include="Vista\Modales\ModalPrestamo.resx">
       <DependentUpon>ModalPrestamo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\ModalUsuario.resx">
+    <EmbeddedResource Include="Vista\Modales\ModalUsuario.resx">
       <DependentUpon>ModalUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Libros.resx">
+      <DependentUpon>Libros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Usuarios.resx">
       <DependentUpon>Usuarios.cs</DependentUpon>

@@ -43,5 +43,18 @@ namespace ProyectoFigma.Vista
             form.Dock = DockStyle.Fill;
             form.Show();
         }
+
+        private void labeLibros_Click(object sender, EventArgs e)
+        {
+            var form = Libros.GetInstance();
+            if (this.ActiveMdiChild != null)
+            {
+                this.ActiveMdiChild.Hide();
+            }
+
+            form.MdiParent = this;
+            form.Dock = DockStyle.Fill;
+            form.Show();
+        }
     }
 }
