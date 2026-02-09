@@ -1,5 +1,4 @@
 using System;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace ProyectoFigma.Vista
@@ -15,7 +14,6 @@ namespace ProyectoFigma.Vista
         private ModoModal modo;
 
         public string Titulo { get; set; }
-        public string Autor { get; set; }
         public string Escritor { get; set; }
         public int Ano_Edicion { get; set; }
         public string Sinopsis { get; set; }
@@ -26,15 +24,30 @@ namespace ProyectoFigma.Vista
             InitializeComponent();
             this.modo = modo;
             ConfigurarModal();
+
+            // Configurar rango del NumericUpDown para año
+            numAno.Minimum = 1500;
+            numAno.Maximum = DateTime.Now.Year;
+            numAno.Value = DateTime.Now.Year;
+
+            numDisp.Minimum = 0;
+            numDisp.Maximum = 1;
+            numDisp.Value = 1;
         }
 
-        public ModalLibro(ModoModal modo, string titulo, string escritor, int ano_Edicion, string sinopsis, int disponible) : this(modo)
+        // Constructor para editar un libro
+        public ModalLibro(ModoModal modo, string titulo, string escritor, int ano_Edicion, string sinopsis, int disponible)
+            : this(modo)
         {
             txtTitulo.Text = titulo;
             txtAutor.Text = escritor;
-            numDisp.Value = ano_Edicion;
             txtSinopsis.Text = sinopsis;
-            numDisp.Value = disponible;
+
+            // Aseguramos que el año esté dentro del rango
+            numAno.Value = Math.Min(Math.Max(ano_Edicion, (int)numAno.Minimum), (int)numAno.Maximum);
+
+            // Aseguramos que la disponibilidad esté dentro del rango
+            numDisp.Value = Math.Min(Math.Max(disponible, (int)numDisp.Minimum), (int)numDisp.Maximum);
         }
 
         private void ConfigurarModal()
@@ -57,7 +70,7 @@ namespace ProyectoFigma.Vista
             {
                 Titulo = txtTitulo.Text.Trim();
                 Escritor = txtAutor.Text.Trim();
-                Ano_Edicion = (int)numDisp.Value;
+                Ano_Edicion = (int)numAno.Value;  // ? CORREGIDO
                 Sinopsis = txtSinopsis.Text.Trim();
                 Disponible = (int)numDisp.Value;
 
@@ -88,12 +101,11 @@ namespace ProyectoFigma.Vista
                 return false;
             }
 
-            if (numAno.Value == 0)
+            if (numAno.Value < 1500 || numAno.Value > DateTime.Now.Year)
             {
-                MessageBox.Show("El año de publicación es obligatorio", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"El año debe estar entre 1500 y {DateTime.Now.Year}", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-
 
             return true;
         }

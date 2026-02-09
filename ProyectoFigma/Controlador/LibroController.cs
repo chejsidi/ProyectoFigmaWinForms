@@ -31,6 +31,7 @@ namespace ProyectoFigma.Controlador
                     });
                 }
             }
+
             return lista;
         }
 
@@ -40,10 +41,11 @@ namespace ProyectoFigma.Controlador
             {
                 conn.Open();
                 var cmd = new SqliteCommand(
-                    "INSERT INTO Libros (Titulo, Escritor, Ano_Edicion, Sinopsis, Disponible) VALUES (@t, @l, @a, @s, @d)", conn);
+                    "INSERT INTO Libros (Titulo, Escritor, Ano_Edicion, Sinopsis, Disponible) VALUES (@t, @e, @a, @s, @d)",
+                    conn);
 
                 cmd.Parameters.AddWithValue("@t", l.Titulo);
-                cmd.Parameters.AddWithValue("@l", l.Escritor);
+                cmd.Parameters.AddWithValue("@e", l.Escritor);
                 cmd.Parameters.AddWithValue("@a", l.Ano_Edicion);
                 cmd.Parameters.AddWithValue("@s", l.Sinopsis);
                 cmd.Parameters.AddWithValue("@d", l.Disponible);
@@ -60,6 +62,26 @@ namespace ProyectoFigma.Controlador
                     "DELETE FROM Libros WHERE Id=@id", conn);
 
                 cmd.Parameters.AddWithValue("@id", id);
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        public void ActualizarLibro(Libro libro)
+        {
+            using (var conn = new SqliteConnection(conexion))
+            {
+                conn.Open();
+                var cmd = new SqliteCommand(
+                    "UPDATE Libros SET Titulo=@t, Escritor=@e, Ano_Edicion=@a, Sinopsis=@s, Disponible=@d WHERE Id=@id",
+                    conn);
+
+                cmd.Parameters.AddWithValue("@t", libro.Titulo);
+                cmd.Parameters.AddWithValue("@e", libro.Escritor);
+                cmd.Parameters.AddWithValue("@a", libro.Ano_Edicion);
+                cmd.Parameters.AddWithValue("@s", libro.Sinopsis);
+                cmd.Parameters.AddWithValue("@d", libro.Disponible);
+                cmd.Parameters.AddWithValue("@id", libro.ID);
+
                 cmd.ExecuteNonQuery();
             }
         }

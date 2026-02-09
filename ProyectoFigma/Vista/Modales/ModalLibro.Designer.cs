@@ -1,3 +1,5 @@
+using System;
+
 namespace ProyectoFigma.Vista
 {
     partial class ModalLibro
@@ -76,24 +78,11 @@ namespace ProyectoFigma.Vista
             | System.Windows.Forms.AnchorStyles.Right)));
             this.numAno.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.numAno.Location = new System.Drawing.Point(130, 88);
-            this.numAno.Maximum = new decimal(new int[] {
-            2100,
-            0,
-            0,
-            0});
-            this.numAno.Minimum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
+            this.numAno.Maximum = DateTime.Now.Year;
+            this.numAno.Minimum = 1500;
             this.numAno.Name = "numAno";
             this.numAno.Size = new System.Drawing.Size(190, 23);
             this.numAno.TabIndex = 14;
-            this.numAno.Value = new decimal(new int[] {
-            2024,
-            0,
-            0,
-            0});
             // 
             // numDisp
             // 

@@ -65,7 +65,7 @@ namespace ProyectoFigma.Controlador
                 {
                     cmd.ExecuteNonQuery();
                 }
-                catch (Exception ex)
+                catch
                 {
                     MessageBox.Show("Debe eliminar los prestamos y libros del usuarios antes de borrarlo");
                 }
