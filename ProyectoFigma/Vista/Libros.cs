@@ -84,6 +84,18 @@ namespace ProyectoFigma.Vista
                 CargarLibros();
             }
         }
+        private void lblLibros_Click(object sender, EventArgs e)
+        {
+            var form = Inicio.GetInstance();
 
+            if (this.MdiParent != null && this.MdiParent.ActiveMdiChild != null)
+            {
+                this.MdiParent.ActiveMdiChild.Hide();
+            }
+
+            form.MdiParent = this.MdiParent;
+            form.Dock = DockStyle.Fill;
+            form.Show();
+        }
     }
 }

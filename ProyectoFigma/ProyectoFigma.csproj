@@ -99,6 +99,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controlador\LibroController.cs" />
+    <Compile Include="Controlador\PrestamoController.cs" />
     <Compile Include="Controlador\UsuarioController.cs" />
     <Compile Include="Modelo\Libro.cs" />
     <Compile Include="Modelo\Prestamo.cs" />
@@ -141,6 +142,12 @@
     <Compile Include="Vista\Libros.Designer.cs">
       <DependentUpon>Libros.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\Prestamos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Prestamos.Designer.cs">
+      <DependentUpon>Prestamos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\Usuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,6 +184,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Libros.resx">
       <DependentUpon>Libros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Prestamos.resx">
+      <DependentUpon>Prestamos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Usuarios.resx">
       <DependentUpon>Usuarios.cs</DependentUpon>

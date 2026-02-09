@@ -65,9 +65,9 @@
             this.bBorrar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bBorrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bBorrar.ForeColor = System.Drawing.Color.White;
-            this.bBorrar.Location = new System.Drawing.Point(681, 3);
+            this.bBorrar.Location = new System.Drawing.Point(673, 3);
             this.bBorrar.Name = "bBorrar";
-            this.bBorrar.Size = new System.Drawing.Size(93, 25);
+            this.bBorrar.Size = new System.Drawing.Size(98, 25);
             this.bBorrar.TabIndex = 6;
             this.bBorrar.Text = "BORRAR";
             this.bBorrar.UseVisualStyleBackColor = false;
@@ -77,12 +77,13 @@
             // 
             this.lblLibros.AutoSize = true;
             this.lblLibros.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLibros.Location = new System.Drawing.Point(24, 0);
+            this.lblLibros.Location = new System.Drawing.Point(25, 0);
             this.lblLibros.Name = "lblLibros";
-            this.lblLibros.Size = new System.Drawing.Size(155, 31);
+            this.lblLibros.Size = new System.Drawing.Size(119, 31);
             this.lblLibros.TabIndex = 2;
             this.lblLibros.Text = "< Libros";
             this.lblLibros.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblLibros.Click += new System.EventHandler(this.lblLibros_Click);
             // 
             // bAnadir
             // 
@@ -90,9 +91,9 @@
             this.bAnadir.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bAnadir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bAnadir.ForeColor = System.Drawing.Color.Black;
-            this.bAnadir.Location = new System.Drawing.Point(582, 3);
+            this.bAnadir.Location = new System.Drawing.Point(569, 3);
             this.bAnadir.Name = "bAnadir";
-            this.bAnadir.Size = new System.Drawing.Size(93, 25);
+            this.bAnadir.Size = new System.Drawing.Size(98, 25);
             this.bAnadir.TabIndex = 3;
             this.bAnadir.Text = "AÑADIR";
             this.bAnadir.UseVisualStyleBackColor = false;
@@ -103,9 +104,9 @@
             this.dGridLibros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tableLayoutPanel1.SetColumnSpan(this.dGridLibros, 4);
             this.dGridLibros.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dGridLibros.Location = new System.Drawing.Point(24, 34);
+            this.dGridLibros.Location = new System.Drawing.Point(25, 34);
             this.dGridLibros.Name = "dGridLibros";
-            this.dGridLibros.Size = new System.Drawing.Size(750, 413);
+            this.dGridLibros.Size = new System.Drawing.Size(746, 413);
             this.dGridLibros.TabIndex = 7;
             // 
             // Libros

@@ -184,6 +184,7 @@
             this.labelPrestamos.TabIndex = 4;
             this.labelPrestamos.Text = "PRESTAMOS";
             this.labelPrestamos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelPrestamos.Click += new System.EventHandler(this.labePrestamos_Click);
             // 
             // labelLibros
             // 

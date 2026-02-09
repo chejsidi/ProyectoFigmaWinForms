@@ -11,7 +11,7 @@ namespace ProyectoFigma.Modelo
         public int Id { get; set; }
         public int ID_Libro { get; set; }
         public int ID_Usuario { get; set; }
-        public DateTime Fecha_Inicio { get; set; }
-        public DateTime Fecha_Fin { get; set; }
+        public string Fecha_Inicio { get; set; }
+        public string Fecha_Fin { get; set; }
     }
 }

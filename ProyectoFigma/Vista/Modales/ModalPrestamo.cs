@@ -1,5 +1,5 @@
+using ProyectoFigma.Controlador;
 using System;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace ProyectoFigma.Vista
@@ -14,29 +14,31 @@ namespace ProyectoFigma.Vista
 
         private ModoModal modo;
 
-        // Propiedades para acceder a los datos del formulario
-        public int UsuarioId { get; set; }
-        public int LibroId { get; set; }
-        public DateTime FechaPrestamo { get; set; }
-        public DateTime FechaDevolucion { get; set; }
+        public int ID_Usuario { get; set; }
+        public int ID_Libro { get; set; }
+        public string Fecha_Inicio { get; set; }
+        public string Fecha_Fin { get; set; }
+        UsuarioController usuarioController = new UsuarioController();
+        LibroController libroController = new LibroController();
 
         public ModalPrestamo(ModoModal modo)
         {
             InitializeComponent();
             this.modo = modo;
+            CargarCombos();
             ConfigurarModal();
         }
-
-        // Constructor sobrecargado para edición con datos existentes
-        public ModalPrestamo(ModoModal modo, int usuarioId, int libroId,
-          DateTime fechaPrestamo, DateTime fechaDevolucion) : this(modo)
+        public ModalPrestamo(
+            ModoModal modo,
+            int idUsuario,
+            int idLibro,
+            string fechaInicio,
+            string fechaFin) : this(modo)
         {
-            // Aquí deberías cargar el usuario y libro seleccionados en los ComboBox
-            // Por ahora solo guardamos los IDs
-            UsuarioId = usuarioId;
-            LibroId = libroId;
-            dtpFechaPrestamo.Value = fechaPrestamo;
-            dtpFechaDevolucion.Value = fechaDevolucion;
+            ID_Usuario = idUsuario;
+            ID_Libro = idLibro;
+            dtpFechaPrestamo.Value = DateTime.Parse(fechaInicio);
+            dtpFechaDevolucion.Value = DateTime.Parse(fechaFin);
         }
 
         private void ConfigurarModal()
@@ -46,7 +48,7 @@ namespace ProyectoFigma.Vista
                 this.Text = "Añadir Préstamo";
                 lblTitulo.Text = "Añadir Préstamo";
                 dtpFechaPrestamo.Value = DateTime.Now;
-                dtpFechaDevolucion.Value = DateTime.Now.AddDays(14); // 14 días por defecto
+                dtpFechaDevolucion.Value = DateTime.Now.AddDays(14);
             }
             else
             {
@@ -54,16 +56,29 @@ namespace ProyectoFigma.Vista
                 lblTitulo.Text = "Editar Préstamo";
             }
         }
+        private void CargarCombos()
+        {
+            cmbUsuario.DataSource = usuarioController.ObtenerUsuarios();
+            cmbUsuario.DisplayMember = "Nombre";  
+            cmbUsuario.ValueMember = "Id";   
+            cmbUsuario.SelectedIndex = -1;
+
+            cmbLibro.DataSource = libroController.ObtenerLibros();
+            cmbLibro.DisplayMember = "Titulo";
+            cmbLibro.ValueMember = "ID";
+            cmbLibro.SelectedIndex = -1;
+        }
+
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             if (ValidarCampos())
             {
-                // Guardar los valores en las propiedades
-                // Aquí deberías obtener los IDs de los ComboBox cuando tu compañero los implemente
-                // Por ahora asumimos valores temporales
-                FechaPrestamo = dtpFechaPrestamo.Value;
-                FechaDevolucion = dtpFechaDevolucion.Value;
+                ID_Usuario = (int)cmbUsuario.SelectedValue;
+                ID_Libro = (int)cmbLibro.SelectedValue;
+
+                Fecha_Inicio = dtpFechaPrestamo.Value.ToString("yyyy-MM-dd");
+                Fecha_Fin = dtpFechaDevolucion.Value.ToString("yyyy-MM-dd");
 
                 this.DialogResult = DialogResult.OK;
                 this.Close();
@@ -78,14 +93,21 @@ namespace ProyectoFigma.Vista
 
         private bool ValidarCampos()
         {
-            // Aquí validarías que se haya seleccionado un usuario y un libro
-            // cuando tu compañero implemente los ComboBox
+            if (cmbUsuario.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe seleccionar un usuario");
+                return false;
+            }
+
+            if (cmbLibro.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe seleccionar un libro");
+                return false;
+            }
 
             if (dtpFechaDevolucion.Value < dtpFechaPrestamo.Value)
             {
-                MessageBox.Show("La fecha de devolución no puede ser anterior a la fecha de préstamo",
-                    "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                dtpFechaDevolucion.Focus();
+                MessageBox.Show("La fecha de devolución no puede ser anterior");
                 return false;
             }
 

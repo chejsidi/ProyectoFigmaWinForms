@@ -19,8 +19,6 @@ namespace ProyectoFigma.Vista
         {
             this.lblTitulo = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.cmbEstado = new System.Windows.Forms.ComboBox();
-            this.lblEstado = new System.Windows.Forms.Label();
             this.dtpFechaDevolucion = new System.Windows.Forms.DateTimePicker();
             this.lblFechaDevolucion = new System.Windows.Forms.Label();
             this.dtpFechaPrestamo = new System.Windows.Forms.DateTimePicker();
@@ -48,13 +46,11 @@ namespace ProyectoFigma.Vista
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-         | System.Windows.Forms.AnchorStyles.Left)
-   | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.cmbEstado);
-            this.panel1.Controls.Add(this.lblEstado);
             this.panel1.Controls.Add(this.dtpFechaDevolucion);
             this.panel1.Controls.Add(this.lblFechaDevolucion);
             this.panel1.Controls.Add(this.dtpFechaPrestamo);
@@ -65,36 +61,13 @@ namespace ProyectoFigma.Vista
             this.panel1.Controls.Add(this.lblUsuario);
             this.panel1.Location = new System.Drawing.Point(30, 70);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(340, 250);
+            this.panel1.Size = new System.Drawing.Size(340, 199);
             this.panel1.TabIndex = 1;
-            // 
-            // cmbEstado
-            // 
-            this.cmbEstado.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-        | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbEstado.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.cmbEstado.FormattingEnabled = true;
-            this.cmbEstado.Location = new System.Drawing.Point(150, 197);
-            this.cmbEstado.Name = "cmbEstado";
-            this.cmbEstado.Size = new System.Drawing.Size(170, 23);
-            this.cmbEstado.TabIndex = 9;
-            // 
-            // lblEstado
-            // 
-            this.lblEstado.AutoSize = true;
-            this.lblEstado.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblEstado.Location = new System.Drawing.Point(15, 200);
-            this.lblEstado.Name = "lblEstado";
-            this.lblEstado.Size = new System.Drawing.Size(45, 15);
-            this.lblEstado.TabIndex = 8;
-            this.lblEstado.Text = "Estado:";
-            this.lblEstado.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // dtpFechaDevolucion
             // 
-            this.dtpFechaDevolucion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-      | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtpFechaDevolucion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpFechaDevolucion.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtpFechaDevolucion.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaDevolucion.Location = new System.Drawing.Point(150, 152);
@@ -108,15 +81,15 @@ namespace ProyectoFigma.Vista
             this.lblFechaDevolucion.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lblFechaDevolucion.Location = new System.Drawing.Point(15, 155);
             this.lblFechaDevolucion.Name = "lblFechaDevolucion";
-            this.lblFechaDevolucion.Size = new System.Drawing.Size(109, 15);
+            this.lblFechaDevolucion.Size = new System.Drawing.Size(103, 15);
             this.lblFechaDevolucion.TabIndex = 6;
             this.lblFechaDevolucion.Text = "Fecha devolución:";
             this.lblFechaDevolucion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // dtpFechaPrestamo
             // 
-            this.dtpFechaPrestamo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-        | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtpFechaPrestamo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpFechaPrestamo.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtpFechaPrestamo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaPrestamo.Location = new System.Drawing.Point(150, 107);
@@ -130,15 +103,15 @@ namespace ProyectoFigma.Vista
             this.lblFechaPrestamo.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lblFechaPrestamo.Location = new System.Drawing.Point(15, 110);
             this.lblFechaPrestamo.Name = "lblFechaPrestamo";
-            this.lblFechaPrestamo.Size = new System.Drawing.Size(98, 15);
+            this.lblFechaPrestamo.Size = new System.Drawing.Size(94, 15);
             this.lblFechaPrestamo.TabIndex = 4;
             this.lblFechaPrestamo.Text = "Fecha préstamo:";
             this.lblFechaPrestamo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // cmbLibro
             // 
-            this.cmbLibro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-       | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbLibro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbLibro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbLibro.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.cmbLibro.FormattingEnabled = true;
@@ -153,15 +126,15 @@ namespace ProyectoFigma.Vista
             this.lblLibro.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lblLibro.Location = new System.Drawing.Point(15, 65);
             this.lblLibro.Name = "lblLibro";
-            this.lblLibro.Size = new System.Drawing.Size(36, 15);
+            this.lblLibro.Size = new System.Drawing.Size(37, 15);
             this.lblLibro.TabIndex = 2;
             this.lblLibro.Text = "Libro:";
             this.lblLibro.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // cmbUsuario
             // 
-            this.cmbUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-     | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbUsuario.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.cmbUsuario.FormattingEnabled = true;
@@ -188,7 +161,7 @@ namespace ProyectoFigma.Vista
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(80, 340);
+            this.btnGuardar.Location = new System.Drawing.Point(80, 289);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(100, 35);
             this.btnGuardar.TabIndex = 2;
@@ -203,7 +176,7 @@ namespace ProyectoFigma.Vista
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(220, 340);
+            this.btnCancelar.Location = new System.Drawing.Point(220, 289);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(100, 35);
             this.btnCancelar.TabIndex = 3;
@@ -216,14 +189,11 @@ namespace ProyectoFigma.Vista
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(400, 400);
+            this.ClientSize = new System.Drawing.Size(400, 349);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblTitulo);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
-            this.MaximizeBox = true;
-            this.MinimizeBox = true;
             this.MinimumSize = new System.Drawing.Size(350, 380);
             this.Name = "ModalPrestamo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -246,8 +216,6 @@ namespace ProyectoFigma.Vista
         private System.Windows.Forms.DateTimePicker dtpFechaPrestamo;
         private System.Windows.Forms.Label lblFechaDevolucion;
         private System.Windows.Forms.DateTimePicker dtpFechaDevolucion;
-        private System.Windows.Forms.Label lblEstado;
-        private System.Windows.Forms.ComboBox cmbEstado;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnCancelar;
     }
