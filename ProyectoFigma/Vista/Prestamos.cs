@@ -29,10 +29,23 @@ namespace ProyectoFigma.Vista
         private void CargarPrestamos()
         {
             dGridPrestamos.DataSource = null;
+            dGridPrestamos.AutoGenerateColumns = true;
             dGridPrestamos.DataSource = controller.ObtenerPrestamos();
 
             dGridPrestamos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dGridPrestamos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+            // Ocultar IDs en visualización
+            if (dGridPrestamos.Columns["ID_Libro"] != null)
+                dGridPrestamos.Columns["ID_Libro"].Visible = false;
+            if (dGridPrestamos.Columns["ID_Usuario"] != null)
+                dGridPrestamos.Columns["ID_Usuario"].Visible = false;
+
+            // Renombrar encabezados para mejor lectura
+            if (dGridPrestamos.Columns["UsuarioNombre"] != null)
+                dGridPrestamos.Columns["UsuarioNombre"].HeaderText = "Usuario";
+            if (dGridPrestamos.Columns["LibroTitulo"] != null)
+                dGridPrestamos.Columns["LibroTitulo"].HeaderText = "Libro";
         }
 
         private void btnAñadir_Click(object sender, EventArgs e)
