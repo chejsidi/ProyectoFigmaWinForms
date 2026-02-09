@@ -13,5 +13,8 @@ namespace ProyectoFigma.Modelo
         public int ID_Usuario { get; set; }
         public string Fecha_Inicio { get; set; }
         public string Fecha_Fin { get; set; }
+
+        public string UsuarioNombre { get; set; }
+        public string LibroTitulo { get; set; }
     }
 }

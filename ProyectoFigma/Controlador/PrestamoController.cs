@@ -18,7 +18,10 @@ namespace ProyectoFigma.Controlador
             {
                 conn.Open();
                 var cmd = new SqliteCommand(
-                    "SELECT * FROM Prestamos",
+                    "SELECT p.ID, p.ID_Libro, p.ID_Usuario, p.Fecha_Inicio, p.Fecha_Fin, u.Nombre AS UsuarioNombre, l.Titulo AS LibroTitulo " +
+                    "FROM Prestamos p " +
+                    "JOIN Usuarios u ON u.ID = p.ID_Usuario " +
+                    "JOIN Libros l ON l.ID = p.ID_Libro",
                     conn);
 
                 var reader = cmd.ExecuteReader();
@@ -31,7 +34,9 @@ namespace ProyectoFigma.Controlador
                         ID_Libro = reader.GetInt32(1),
                         ID_Usuario = reader.GetInt32(2),
                         Fecha_Inicio = reader.GetString(3),
-                        Fecha_Fin = reader.GetString(4)
+                        Fecha_Fin = reader.GetString(4),
+                        UsuarioNombre = reader.IsDBNull(5) ? "" : reader.GetString(5),
+                        LibroTitulo = reader.IsDBNull(6) ? "" : reader.GetString(6)
                     });
                 }
             }
