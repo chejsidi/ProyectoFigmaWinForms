@@ -35,19 +35,16 @@ namespace ProyectoFigma.Vista
             dGridPrestamos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dGridPrestamos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
-            // Ocultar IDs en visualización
             if (dGridPrestamos.Columns["ID_Libro"] != null)
                 dGridPrestamos.Columns["ID_Libro"].Visible = false;
             if (dGridPrestamos.Columns["ID_Usuario"] != null)
                 dGridPrestamos.Columns["ID_Usuario"].Visible = false;
 
-            // Renombrar encabezados para mejor lectura
             if (dGridPrestamos.Columns["UsuarioNombre"] != null)
                 dGridPrestamos.Columns["UsuarioNombre"].HeaderText = "Usuario";
             if (dGridPrestamos.Columns["LibroTitulo"] != null)
                 dGridPrestamos.Columns["LibroTitulo"].HeaderText = "Libro";
 
-            // Evitar edición de campos que no pertenecen al préstamo
             if (dGridPrestamos.Columns["UsuarioNombre"] != null)
                 dGridPrestamos.Columns["UsuarioNombre"].ReadOnly = true;
             if (dGridPrestamos.Columns["LibroTitulo"] != null)

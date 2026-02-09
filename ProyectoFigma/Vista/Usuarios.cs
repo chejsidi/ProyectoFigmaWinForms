@@ -1,13 +1,6 @@
 ﻿using ProyectoFigma.Controlador;
 using ProyectoFigma.Modelo;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProyectoFigma.Vista
@@ -46,7 +39,6 @@ namespace ProyectoFigma.Vista
 
             if (modal.ShowDialog() == DialogResult.OK)
             {
-                // Crear el nuevo usuario con los datos del modal
                 Usuario nuevoUsuario = new Usuario
                 {
                     Nombre = modal.Nombre,
@@ -55,10 +47,8 @@ namespace ProyectoFigma.Vista
                     Telefono = int.TryParse(modal.Telefono, out int tel) ? tel : 0
                 };
 
-                // Agregar el usuario a la base de datos
                 controller.AgregarUsuario(nuevoUsuario);
 
-                // Recargar la lista de usuarios
                 CargarUsuarios();
 
                 MessageBox.Show("Usuario añadido correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);

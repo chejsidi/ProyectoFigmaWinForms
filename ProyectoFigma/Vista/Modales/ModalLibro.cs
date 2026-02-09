@@ -25,7 +25,6 @@ namespace ProyectoFigma.Vista
             this.modo = modo;
             ConfigurarModal();
 
-            // Configurar rango del NumericUpDown para año
             numAno.Minimum = 1500;
             numAno.Maximum = DateTime.Now.Year;
             numAno.Value = DateTime.Now.Year;
@@ -35,7 +34,6 @@ namespace ProyectoFigma.Vista
             numDisp.Value = 1;
         }
 
-        // Constructor para editar un libro
         public ModalLibro(ModoModal modo, string titulo, string escritor, int ano_Edicion, string sinopsis, int disponible)
             : this(modo)
         {
@@ -43,10 +41,8 @@ namespace ProyectoFigma.Vista
             txtAutor.Text = escritor;
             txtSinopsis.Text = sinopsis;
 
-            // Aseguramos que el año esté dentro del rango
             numAno.Value = Math.Min(Math.Max(ano_Edicion, (int)numAno.Minimum), (int)numAno.Maximum);
 
-            // Aseguramos que la disponibilidad esté dentro del rango
             numDisp.Value = Math.Min(Math.Max(disponible, (int)numDisp.Minimum), (int)numDisp.Maximum);
         }
 
@@ -70,7 +66,7 @@ namespace ProyectoFigma.Vista
             {
                 Titulo = txtTitulo.Text.Trim();
                 Escritor = txtAutor.Text.Trim();
-                Ano_Edicion = (int)numAno.Value;  // ✅ CORREGIDO
+                Ano_Edicion = (int)numAno.Value; 
                 Sinopsis = txtSinopsis.Text.Trim();
                 Disponible = (int)numDisp.Value;
 

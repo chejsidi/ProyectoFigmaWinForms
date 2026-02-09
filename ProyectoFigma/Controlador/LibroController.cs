@@ -1,6 +1,7 @@
 ﻿using Microsoft.Data.Sqlite;
 using ProyectoFigma.Modelo;
 using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace ProyectoFigma.Controlador
 {
@@ -62,7 +63,14 @@ namespace ProyectoFigma.Controlador
                     "DELETE FROM Libros WHERE Id=@id", conn);
 
                 cmd.Parameters.AddWithValue("@id", id);
-                cmd.ExecuteNonQuery();
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                }
+                catch
+                {
+                    MessageBox.Show("Debe eliminar los prestamos antes de borrarlo");
+                }
             }
         }
 

@@ -28,7 +28,6 @@ namespace ProyectoFigma.Vista
 
         private void CrearPanelDeLibros()
         {
-            // Crear FlowLayoutPanel para las cards
             var flowLibros = new FlowLayoutPanel
             {
                 Name = "flowLibros",
